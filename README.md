@@ -1,5 +1,5 @@
-# BSOE Plain
-This is the base theme for BSOE sites
+# UCSC Plain
+This is the base theme for UCSC Drupal 8 sites
 
 ## This site is organized into components
 If something has more than one asset (css, js, twig, md) then it is in a directory. 
