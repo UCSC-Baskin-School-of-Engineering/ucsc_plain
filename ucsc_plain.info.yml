@@ -1,0 +1,20 @@
+name: UCSC Plain
+type: theme
+description: 'A basic base for the UCSC themes.'
+package: 'UCSC Plain'
+core: 8.x
+version: 1.0
+screenshot: logo.svg
+libraries:
+  - 'ucsc_plain/global-styling'
+  - 'ucsc_plain/fonts'
+base theme: classy
+regions:
+  secondary_menu: 'Secondary Menu'
+  header: 'Header, Logo and Site Name'
+  primary_menu: 'Primary Menu'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  breadcrumb: 'Breadcrumb'
+  content: 'Main Content'
+  footer: 'Main Footer, includes navigation'
