@@ -12,17 +12,17 @@ Learn about Grid System in the [README-grid-system.md](README-grid-system.md) fi
 Checkout how to customize in the [README-customizing.md](README-customizing.md) file.
 
 ## There is documentation on components in the components folder. Check it out!
-[alerts.md](components/alerts/alerts.md)
-[badges.md](components/badges/badges.md)
-[buttons.md](components/buttons/buttons.md)
-[content.md](components/content/content.md)
-[dropdowns.md](components/dropdowns/dropdowns.md)
-[forms.md](components/forms/forms.md)
-[loaders.md](components/loaders/loaders.md)
-[switches.md](components/switches/switches.md)
-[tables.md](components/tables/tables.md)
-[tabs.md](components/tabs/tabs.md)
-[utilities.md](components/utilitites/utilities.md)
+- [alerts.md](components/alerts/alerts.md)
+- [badges.md](components/badges/badges.md)
+- [buttons.md](components/buttons/buttons.md)
+- [content.md](components/content/content.md)
+- [dropdowns.md](components/dropdowns/dropdowns.md)
+- [forms.md](components/forms/forms.md)
+- [loaders.md](components/loaders/loaders.md)
+- [switches.md](components/switches/switches.md)
+- [tables.md](components/tables/tables.md)
+- [tabs.md](components/tabs/tabs.md)
+- [utilities.md](components/utilitites/utilities.md)
 
 
 ## Thank you to Shoelace.css
