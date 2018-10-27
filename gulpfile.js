@@ -45,6 +45,7 @@ var options = {
             './components/mixins.scss',
             './components/variables.scss',
             './components/normalize.scss',
+            './components/fonts.scss',
             './components/**/*.scss'
         ]
     },

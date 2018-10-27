@@ -1,5 +1,9 @@
 .region-primary-menu {
   margin: 0;
+  // background: var(--color-primary);
+}
+
+.region-secondary-menu {
   background: var(--color-primary);
 }
 
@@ -53,6 +57,8 @@ ul.menu {
     }
   }
 }
+
+
 
 .menu--account {
   a {

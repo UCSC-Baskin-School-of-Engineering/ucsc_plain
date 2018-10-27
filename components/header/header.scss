@@ -46,10 +46,10 @@
   }
 }
 
-header {
-  padding-bottom: 1rem;
-  background: var(--color-light-gray);
-}
+// header {
+//   padding-bottom: 1rem;
+//   background: var(--color-light-gray);
+// }
 
 .site-name {
   font-size: 200%;
@@ -66,4 +66,16 @@ header {
 
 .menu--account { 
   margin-bottom: 0;
+}
+
+#block-ucsctitle {
+  margin: 0;
+}
+#logo {
+  text-indent: -10000px;
+  background: transparent url(https://static.ucsc.edu/_responsive/images/logos/uc-santa-cruz-reverse.svg) no-repeat left top;
+  display: block;
+  width: 107px;
+  height: 26px;
+  margin-top: 2px;
 }

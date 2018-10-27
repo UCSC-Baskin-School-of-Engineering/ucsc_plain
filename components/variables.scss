@@ -2,21 +2,21 @@
 
 :root {
   /* Fonts */
-  --font-sans-serif: "EB Garamond",serif;
-  --font-serif: serif;
+  --font-sans-serif: 'Roboto', sans-serif;
+  --font-serif: 'EB Garamond', serif;
   --font-system: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-monospace: Menlo, Consolas, "DejaVu Sans Mono", monospace;
-  --font-titles: "EB Garamond", sans-serif;
+  --font-monospace: Monaco, Menlo, Consolas, "Courier New", monospace;
+  --font-titles: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
   /* Colors */
-  --color-primary: #0000ff;
+  --color-primary: #01589d;
   --color-light-blue: #8bc2fb;
   --color-extra-light-blue: #BAE0FB;
   --color-white: #ffffff;
   --color-blue: #0c5eb1;
   --color-green: #1cd8a1;
   --color-dark-green: #008c69;
-  --color-yellow: #f7da50;
+  --color-yellow: #f7da50;//#f1af13 yellow--text??? f1b521
   --color-light-yellow: #fdee98;
   --color-orange: #f16c0a;
   --color-red: #ff4136;
@@ -52,7 +52,7 @@
 
   /* Content */
   --body-bg-color: var(--color-light-gray);
-  --body-color: var(--color-text-gray);
+  --body-color: var(--color-black);
   --font-family: var(--font-system);
   --font-size: 1rem; /* Most browsers use a default font size of 16px */
   --font-size-big: 1.25rem;

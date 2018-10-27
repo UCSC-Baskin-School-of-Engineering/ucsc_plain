@@ -23,7 +23,8 @@
     "smartmenus": "^1.0.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd __test__ && node get_test_page.js && cd .. && gulp"
   },
   "author": ""
 }

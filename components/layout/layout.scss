@@ -33,35 +33,38 @@ main,
 
 header {
   display: flex;
-  flex-wrap: wrap;
-  @include respond-to(medium-up) {
-    flex-wrap: nowrap;
-  }
+  flex-direction: column;
+  // flex-wrap: wrap;
+  // @include respond-to(medium-up) {
+  //   flex-wrap: nowrap;
+  // }
 }
 
 .region-header {
-  margin-left: 5%;
-  flex-basis: 100%;
-  margin-top: .5rem;
+  // margin-left: 5%;
+  // flex-basis: 100%;
+  // margin-top: .5rem;
   width: 100%;
   order: 2;
-  @include respond-to(medium-up) {
-    flex-basis: 80%;
-    width: auto;
-    order: 1;
-  }
+  // @include respond-to(medium-up) {
+  //   flex-basis: 80%;
+  //   width: auto;
+  //   order: 1;
+  // }
 }
 
 .region-secondary-menu {
-  margin-right: 5%;
-  flex-basis: 100%;
+  // margin-right: 5%;
+  // flex-basis: 100%;
   width: 100%;
   order: 1;
-  @include respond-to(medium-up) {
-    flex-basis: 20%;
-    width: auto;
-    order: 2;
-  }
+  display: flex;
+  padding: 7px 5% 4px 5%;
+  // @include respond-to(medium-up) {
+  //   flex-basis: 20%;
+  //   width: auto;
+  //   order: 2;
+  // }
 }
 
 .layout-container {
