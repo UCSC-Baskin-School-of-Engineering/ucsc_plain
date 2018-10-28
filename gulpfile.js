@@ -1,94 +1,84 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    concat = require('gulp-concat'),
-    cssmin = require('gulp-cssmin'),
-    sassLint = require('gulp-sass-lint'),
-    uglify = require('gulp-uglify'),
-    plumber = require('gulp-plumber'),
-    sourcemaps = require('gulp-sourcemaps'),
-    stripCssComments = require('gulp-strip-css-comments'),
-    eslint = require('gulp-eslint'),
-    watch = require('gulp-watch');
+const gulp = require('gulp'),
+  sass = require('gulp-sass'),
+  concat = require('gulp-concat'),
+  sassLint = require('gulp-sass-lint'),
+  uglify = require('gulp-uglify'),
+  sourcemaps = require('gulp-sourcemaps');
 
-var options = {
-    eslint: {
-        files: [
-            './components/**/*.js'
-        ]
+const options = {
+  dest: './min',
+  glob: {
+    eslint: './components/**/*.js',
+    js: './components/**/*.js',
+    sass: [
+      './components/mixins.scss',
+      './components/variables.scss',
+      './components/normalize.scss',
+      './components/**/*.scss',
+    ],
+  },
+  sassLint: {
+    // maxBuffer default is 300 * 1024
+    maxBuffer: 1000 * 1024,
+    rules: {
+      'class-name-format': 0,
+      'empty-args': 0,
+      'empty-line-between-blocks': 0,
+      'force-element-nesting': 0,
+      'nesting-depth': 0,
+      'no-vendor-prefixes': 0,
+      'property-sort-order': 0,
+      'no-css-comments': 0,
+      'no-important': 0,
+      'one-declaration-per-line': 0,
+      'force-pseudo-nesting': 0,
+      'no-qualifying-elements': 0,
     },
-    sassLint: {
-        // maxBuffer default is 300 * 1024
-        'maxBuffer': 1000 * 1024,
-        rules: {
-            'class-name-format': 0,
-            'empty-args': 0,
-            'empty-line-between-blocks': 0,
-            'force-element-nesting': 0,
-            'nesting-depth': 0,
-            'no-vendor-prefixes': 0,
-            'property-sort-order': 0,
-            'no-css-comments': 0,
-            'no-important': 0,
-            'one-declaration-per-line': 0,
-            'force-pseudo-nesting': 0,
-            'no-qualifying-elements': 0
-        },
-        'config': '.scss-lint.yml'
+    config: '.scss-lint.yml',
+  },
+  uglify: {
+    compress: {
+      unused: false,
     },
-    uglify: {
-        compress: {
-            unused: false
-        }
-    },
-    sass: {
-        files: [
-            './components/mixins.scss',
-            './components/variables.scss',
-            './components/normalize.scss',
-            './components/fonts.scss',
-            './components/**/*.scss'
-        ]
-    },
-    concat: {
-        files: [
-            './components/**/*.js'
-        ]
-    }
+  },
+  sass: {
+    outputStyle: 'compressed',
+  },
 };
 
 // JS Tasks
-gulp.task('js-watch', function() {
-    gulp.src(options.concat.files)
-        .pipe(concat('script.js'))
-        .pipe(gulp.dest('./min'))
-        .pipe(uglify(options.uglify))
-        .pipe(gulp.dest('./min'));
-});
+exports.js = () => (
+  gulp.src(options.glob.js)
+  .pipe(concat('script.js'))
+  .pipe(gulp.dest(options.dest))
+  .pipe(uglify(options.uglify))
+  .pipe(gulp.dest(options.dest))
+);
 
 // Sass Tasks
-gulp.task('sass-watch', function() {
-    gulp.src(options.sass.files)
-        .pipe(concat('styles.css'))
-        .pipe(sass())
-        .pipe(sourcemaps.init())
-        .pipe(stripCssComments({preserve: false}))
-        .pipe(cssmin())
-        .pipe(gulp.dest('./min'));
-});
+exports.sass = () => (
+  gulp.src(options.glob.sass)
+  .pipe(concat('styles.css'))
+  .pipe(sourcemaps.init())
+  .pipe(sass(options.sass))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest(options.dest))
+);
 
-gulp.task('sass-watch-lint', function() {
-    gulp.src(options.sass.files)
-        .pipe(sassLint(options.sassLint))
-        .pipe(sassLint.format())
-        .pipe(sourcemaps.init())
-        .pipe(sass(options.sass).on('error', sass.logError))
-        .pipe(stripCssComments({preserve: false}))
-        .pipe(concat('styles.css'))
-        .pipe(cssmin())
-        .pipe(gulp.dest('./min'));
-});
+exports.sassLint = () => (
+  gulp.src(options.glob.sass)
+  .pipe(concat('styles.css'))
+  .pipe(sassLint(options.sassLint))
+  .pipe(sassLint.format())
+  .pipe(sourcemaps.init())
+  .pipe(sass(options.sass).on('error', sass.logError))
+  .pipe(sourcemaps.write('.'))
+  .pipe(gulp.dest(options.dest))
+);
 
-gulp.task('default', function() {
-    gulp.watch(options.sass.files, ['sass-watch']);
-    gulp.watch('./components/**/*.js', ['js-watch']);
-});
+exports.watch = () => {
+  gulp.watch(options.glob.sass, exports.sass);
+  gulp.watch(options.glob.js, exports.js);
+};
+
+exports.default = (cb) => gulp.series('sass', 'js')(cb);

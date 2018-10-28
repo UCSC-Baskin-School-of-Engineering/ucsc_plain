@@ -4,7 +4,7 @@
 https://nodejs.org/en/download/
 
 2. Install gulp globally (optional - we will install gulp as part
-the npm install - but it's nice to have global)``sudo npm install --global gulp``
+the npm install - but it's nice to have global)``sudo npm install --global gulp-cli``
 
 3. Run `` npm install `` to install all the needed packages
 

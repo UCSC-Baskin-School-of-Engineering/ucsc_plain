@@ -1,30 +1,28 @@
 {
-  "name": "bsoe_plain",
+  "name": "ucsc_plain",
   "version": "1.0.0",
-  "description": "Gulp tasks for BSOE Plain",
+  "description": "UCSC Plain Drupal 8 Theme",
   "license": "GPL-3.0",
-  "repository": {},
-  "main": "gulpfile.js",
+  "author": "wades",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UCSC-Baskin-School-of-Engineering/ucsc_plain"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-eslint": "^4.0.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sass-lint": "^1.3.2",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-strip-css-comments": "^1.2.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-watch": "^4.3.11"
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1"
   },
   "dependencies": {
-    "gulp-cli": "^2.0.1",
-    "smartmenus": "^1.0.1"
+    "smartmenus": "^1.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cd __test__ && node get_test_page.js && cd .. && gulp"
-  },
-  "author": ""
+    "build": "gulp",
+    "dev": "cd __test__ && node get_test_page.js && cd .. && gulp watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
