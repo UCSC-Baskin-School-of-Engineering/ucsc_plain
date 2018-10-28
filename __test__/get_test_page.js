@@ -21,8 +21,8 @@ https_get('https://wades.soe.ucsc.edu/demo-ucsc-website-theme')
 .then((str) => {
 
   str = str
-  .replace('<script src="/themes/ucsc_plain/min/script.js?v=1.x"', '<script src="../min/script.js"')    
-  .replace('@import url("/themes/ucsc_plain/min/styles.css?ph6i0h");', '@import url("../min/styles.css");')  
+  .replace(/<script src="\/themes\/ucsc_plain\/min\/script\.js\b.*?"/, '<script src="../min/script.js"')    
+  .replace(/@import url\("\/themes\/ucsc_plain\/min\/styles\.css\b.*?"\);/, '@import url("../min/styles.css");')  
   .replace(/@import url\("\//g, '@import url("https://wades.soe.ucsc.edu/')
   .replace(/<script src="\//g, '<script src="https://wades.soe.ucsc.edu/')
   .replace(/<img src="\//g, '<img src="https://wades.soe.ucsc.edu/');
