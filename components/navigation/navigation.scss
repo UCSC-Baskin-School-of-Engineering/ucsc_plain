@@ -1,10 +1,7 @@
 .region-primary-menu {
   margin: 0;
+  margin-bottom: 2em;
   // background: var(--color-primary);
-}
-
-.region-secondary-menu {
-  background: var(--color-primary);
 }
 
 ul.menu {
@@ -35,6 +32,12 @@ ul.menu {
   margin-bottom: 0;
   // padding-left: 20px;
   margin-left: 0;
+
+  .has-submenu > .sub-arrow {
+    right: -14px;
+    margin-top: -6px;
+  }
+
 }
 #main-menu li {
   margin-right: 27px;
@@ -66,19 +69,37 @@ ul.menu {
 
 .menu--account {
   margin-bottom: 0;
-  a {
-    // font-weight: 400;
-    color: var(--color-white);
-    font-size: .9rem;
-    display: block;
-    // padding: .25rem;
-    &:hover {
-      // color: var(--color-primary);
-      text-decoration: underline;
+  li {
+    position: relative;
+    margin-left: 1em;
+    &:not(:first-child)::after {
+      background-color: #f1af13;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -.65em;
+      margin-left: -1.5px;
+      margin-top: -2.5px;
+    }
+    a, a.is-active {
+      // font-weight: 400;
+      color: var(--color-white);
+      font-size: .9rem;
+      display: block;
+      // padding: .25rem;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--color-white);
+      }
     }
   }
-  .menu {
-    text-align: right;
-    margin: 0;
-  }
+  // .menu {
+  //   text-align: right;
+  //   margin: 0;
+  //   vertical-align: middle;
+  // }
 }

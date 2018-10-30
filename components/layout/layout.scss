@@ -4,6 +4,7 @@
  * can be full width. Main is included here, as it has multiple regions.
  */
 .region-primary-menu > nav,
+.region-secondary-menu,
 .region-header,
 .region-help,
 .region-highlighted,
@@ -11,11 +12,14 @@
 .paragraph--type--_-column > .paragraph-sections,
 .paragraph--type--_-columns > .paragraph-sections,
 .paragraph--type--page-title,
-main,
+// main,
 .page-node-type-page .block-page-title-block,
 .page-node-type-page .node__content > .field--name-body {
-  margin-right: 15%;
-  margin-left: 15%;
+  max-width: 67.5em;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .page-node-type-page main {
@@ -23,48 +27,16 @@ main,
   margin-left: 0;
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  // flex-wrap: wrap;
-  // @include respond-to(medium-up) {
-  //   flex-wrap: nowrap;
-  // }
-}
-
-.region-header {
-  // margin-left: 5%;
-  // flex-basis: 100%;
-  // margin-top: .5rem;
-  // width: 100%;
-  order: 2;
-  // @include respond-to(medium-up) {
-  //   flex-basis: 80%;
-  //   width: auto;
-  //   order: 1;
-  // }
+#top-bar {
+  background: var(--color-primary);
 }
 
 .region-secondary-menu {
-  // margin-right: 5%;
-  // flex-basis: 100%;
-  // width: 100%;
-  order: 1;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  // padding: 7px 5% 4px 5%;
-  padding: 15%;
-  padding-top: 7px;
-  padding-bottom: 4px;
-  // @include respond-to(medium-up) {
-  //   flex-basis: 20%;
-  //   width: auto;
-  //   order: 2;
-  // }
-  nav { // TEMP
-    float: right;
-  }
+  justify-content: flex-end;
+  align-items: center;
+  padding: 7px 16px;
 }
 
 .layout-container {

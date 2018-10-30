@@ -47,16 +47,17 @@
     {#{{ kint(page) }}#}
 
   <header role="banner">
-      {{ page.header }}
+    <div id="top-bar">
       {{ page.secondary_menu }}
-
+    </div>
+    {{ page.header }}
   </header>
 
-    {{ page.primary_menu }}
+  {{ page.primary_menu }}
 
-      {{ page.highlighted }}
+  {{ page.highlighted }}
 
-      {{ page.help }}
+  {{ page.help }}
 
   <main role="main">
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
@@ -70,15 +71,15 @@
       {# Sidebars are removed - column layout happens in content with paragraphs. #}
 
     <div class="layout-content">
-        {{ page.content }}
+      {{ page.content }}
     </div>{# /.layout-content #}
 
   </main>
 
-    {% if page.footer %}
-      <footer role="contentinfo">
-          {{ page.footer }}
-      </footer>
-    {% endif %}
+  {% if page.footer %}
+    <footer role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
 
 </div>{# /.layout-container #}

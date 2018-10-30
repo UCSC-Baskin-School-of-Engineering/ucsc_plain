@@ -1,10 +1,10 @@
-input[type=search] {
+// input[type=search] {
   // width: auto;
   // margin-right: 5px;
   // padding-top: 0;
   // padding-bottom: 0;
   // display: inline;
-}
+// }
 
 // div#block-searchform {
 //   text-align: right;
@@ -23,12 +23,13 @@ input[type=search] {
 .search-block-form {
 
   margin: 0;
+  margin-left: 20px;
 
   input[type=search] {
     font-size: 15px;
     line-height: 140%;
     box-sizing: border-box;
-    padding: 4px;
+    padding: 3px;
     width: 100%;
     color: #84827c;
     border: none;
