@@ -54,7 +54,7 @@ exports.js = () => (
   .pipe(uglify(options.uglify))
   .pipe(gulp.dest(options.dest))
 );
-
+const { execSync } = require('child_process');
 // Sass Tasks
 exports.sass = () => (
   gulp.src(options.glob.sass)

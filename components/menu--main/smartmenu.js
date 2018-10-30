@@ -2,8 +2,11 @@ jQuery(document).ready(function($) {
 
     $(function() {
         $('#main-menu').smartmenus({
-            subMenusSubOffsetX: 1,
-            subMenusSubOffsetY: -8
+            subMenusMinWidth: '14em',
+            mainMenuSubOffsetY: -1,
+            subIndicators: false,
+            showTimeout: 0,
+            hideTimeout: 0,
         });
     });
 

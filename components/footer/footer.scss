@@ -1,33 +1,107 @@
 footer {
-  padding: 1rem 0 3rem;
-  background-color: var(--color-light-gray);
-  border-top: 1px solid var(--color-shadow-gray);
+  // padding: 1rem 0 3rem;
+  background: var(--color-primary);
+  margin-top: 64px;
+  // padding: 40px 16px 80px 16px;
+  padding: 40px 0 80px 0;  
+  color: var(--color-white);
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  // border-top: 1px solid var(--color-shadow-gray);
+  a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-white);
+    color: var(--color-white);
+    text-transform: uppercase;
+    &:hover {
+      color: var(--color-white);
+      text-decoration: none;      
+    }
+  }
+
+  .footer-left {
+    float: left;
+    width: 60%;
+    .seal {
+      float: left;
+    }
+    .address {
+      text-transform: uppercase;
+      padding-left: 100px;
+      padding-top: 20px;
+      .location {
+        font-weight: 700;
+        font-size: .95rem;
+        margin-bottom: 3px;
+      }
+      .copyright {
+        font-size: .8rem;
+      }
+    }
+  }
+  .footer-right {
+    float: left;
+    width: 40%;
+    text-align: right;
+    .links a {
+      margin-left: 1em;
+      font-size: .8em;
+    }
+  }
+
+  .main-footer {
+    margin-bottom: 4em;
+  }
+  .main-footer, .sub-footer {
+    display: block;
+  }
+
+  .social-media a {
+    margin: 0 10px;
+    font-size: 1.5em;
+    display: inline-block;
+    width: .875em;
+  }
 }
 
-.region-footer .field--name-body {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  flex-wrap: wrap;
-  .footer-left, .footer-right {
-    flex-basis: 100%;
-    width: 100%;
-    @include respond-to(medium-up) {
-      flex-basis: 50%;
-      width: 50%;
-    }
-  }
-  .footer-map {
-    flex-basis: 100%;
-    width: 100%;
-    iframe {
-      width: 100%!important;
-      max-width: 100%!important;
-      float: right;
-    }
-    @include respond-to(medium-up) {
-      flex-basis: 50%;
-      width: 50%;
-    }
-  }
+.legal {
+  text-align: center;
+  margin-bottom: 2em;
+  font-size: .8em;
+  padding: 0;
+}
+
+// .legal ul {
+//   margin: 0 0 1.5em 0
+// }
+
+.legal li {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  margin-left: 1.5em
+}
+
+.legal li:first-child:after {
+  display: none
+}
+
+.legal li:after {
+  background-color: #f1af13;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: -.75em;
+  margin-left: -2.5px;
+  margin-top: -2.5px
+}
+
+.legal .page-meta {
+  font-style: italic;
+  text-transform: uppercase;
+  margin: 0
 }

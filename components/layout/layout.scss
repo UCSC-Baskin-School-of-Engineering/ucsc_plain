@@ -12,7 +12,7 @@
 .paragraph--type--_-column > .paragraph-sections,
 .paragraph--type--_-columns > .paragraph-sections,
 .paragraph--type--page-title,
-// main,
+main,
 .page-node-type-page .block-page-title-block,
 .page-node-type-page .node__content > .field--name-body {
   max-width: 67.5em;
@@ -22,13 +22,13 @@
   padding-right: 16px;
 }
 
-.page-node-type-page main {
-  margin-right: 0;
-  margin-left: 0;
-}
+// .page-node-type-page main {
+//   margin-right: 0;
+//   margin-left: 0;
+// }
 
 #top-bar {
-  background: var(--color-primary);
+  background: #01589d;
 }
 
 .region-secondary-menu {
