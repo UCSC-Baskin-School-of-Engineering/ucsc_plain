@@ -1,9 +1,11 @@
-const gulp = require('gulp'),
-  sass = require('gulp-sass'),
-  concat = require('gulp-concat'),
-  sassLint = require('gulp-sass-lint'),
-  uglify = require('gulp-uglify'),
-  sourcemaps = require('gulp-sourcemaps');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const sassLint = require('gulp-sass-lint');
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
+const { execSync } = require('child_process');  
+
 
 const options = {
   dest: './min',
@@ -46,6 +48,11 @@ const options = {
   },
 };
 
+exports.updateTestSite = (cb) => {
+  execSync('scp -r ./min soe:/www/wades.soe.ucsc.edu/htdocs/themes/ucsc_plain');
+  cb();
+};
+
 // JS Tasks
 exports.js = () => (
   gulp.src(options.glob.js)
@@ -54,7 +61,7 @@ exports.js = () => (
   .pipe(uglify(options.uglify))
   .pipe(gulp.dest(options.dest))
 );
-const { execSync } = require('child_process');
+
 // Sass Tasks
 exports.sass = () => (
   gulp.src(options.glob.sass)
@@ -77,8 +84,8 @@ exports.sassLint = () => (
 );
 
 exports.watch = () => {
-  gulp.watch(options.glob.sass, exports.sass);
-  gulp.watch(options.glob.js, exports.js);
+  gulp.watch(options.glob.sass, gulp.series('sass', 'updateTestSite'));
+  gulp.watch(options.glob.js, gulp.series('js', 'updateTestSite'));
 };
 
 exports.default = (cb) => gulp.series('sass', 'js')(cb);

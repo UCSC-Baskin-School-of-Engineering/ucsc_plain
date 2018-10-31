@@ -70,3 +70,15 @@ nav.tabs {
   padding-bottom: 2em;
   min-height: 300px;
 }
+
+// Search form layout
+#search-form #edit-basic {
+  display: flex;
+  align-items: flex-end;
+  > .form-item-keys {
+    flex: 1;
+  }
+  > input[type="submit"] {
+    margin-bottom: 1em;
+  }
+}
