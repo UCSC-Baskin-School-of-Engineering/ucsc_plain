@@ -1,13 +1,14 @@
+#block-infofooter {
+  margin: 0;
+}
+
 footer {
-  // padding: 1rem 0 3rem;
   background: var(--color-primary);
   margin-top: 64px;
-  // padding: 40px 16px 80px 16px;
   padding: 40px 0 80px 0;  
   color: var(--color-white);
   font-family: var(--font-secondary);
   font-weight: 400;
-  // border-top: 1px solid var(--color-shadow-gray);
   a {
     text-decoration: underline;
     text-decoration-color: var(--color-white);
@@ -20,8 +21,6 @@ footer {
   }
 
   .footer-left {
-    float: left;
-    width: 60%;
     .seal {
       float: left;
     }
@@ -40,9 +39,10 @@ footer {
     }
   }
   .footer-right {
-    float: left;
-    width: 40%;
     text-align: right;
+    @include respond-to(small-down) {
+      text-align: center;
+    }
     .links a {
       margin-left: 1em;
       font-size: .8em;
@@ -51,9 +51,6 @@ footer {
 
   .main-footer {
     margin-bottom: 4em;
-  }
-  .main-footer, .sub-footer {
-    display: block;
   }
 
   .social-media a {
@@ -69,39 +66,31 @@ footer {
   margin-bottom: 2em;
   font-size: .8em;
   padding: 0;
-}
-
-// .legal ul {
-//   margin: 0 0 1.5em 0
-// }
-
-.legal li {
-  display: inline-block;
-  margin: 0;
-  position: relative;
-  margin-left: 1.5em
-}
-
-.legal li:first-child:after {
-  display: none
-}
-
-.legal li:after {
-  background-color: #f1af13;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: -.75em;
-  margin-left: -2.5px;
-  margin-top: -2.5px
-}
-
-.legal .page-meta {
-  font-style: italic;
-  text-transform: uppercase;
-  margin: 0
+  li {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    margin-left: 1.5em;
+    &:after {
+      background-color: #f1af13;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: -.75em;
+      margin-left: -2.5px;
+      margin-top: -2.5px
+    }
+    &:first-child:after {
+      display: none
+    }
+  }
+  .page-meta {
+    font-style: italic;
+    text-transform: uppercase;
+    margin: 0
+  }
 }

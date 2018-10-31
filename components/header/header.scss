@@ -1,64 +1,51 @@
+#top-bar {
+  background: #01589d;
+}
+
 .block-system-branding-block {
   width: 100%;
   flex-basis: 100%;
   flex-wrap: wrap;
   margin-bottom: 0;
-  @include respond-to(medium-up) {
-    flex-basis: 60%;
-  }
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  @include respond-to(medium-up) {
+    flex-basis: 60%;
+  }
   > a,
   > div {
     display: inline-block;
   }
 }
 
-.site-logo {
-  flex-basis: 100%;
-  align-self: self-start;
-  margin-top: .5rem;
-  margin-right: 5%;
-  @include respond-to(small-up) {
-    flex-basis: 20%;
-    margin-right: 0;
-  }
-}
+// .site-logo {
+//   flex-basis: 100%;
+//   align-self: self-start;
+//   margin-top: .5rem;
+//   margin-right: 5%;
+//   @include respond-to(small-up) {
+//     flex-basis: 20%;
+//     margin-right: 0;
+//   }
+// }
 
 .site-branding {
   flex-basis: 100%;
-  // margin-right: 5%;
-  // margin-top: 1rem;
   margin: 1.5em auto 9px auto;
-  @include respond-to(small-up) {
-    // flex-basis: 78%;
-    // margin-right: 0;
-    // margin-left: 2%;
-    // margin-top: 0;
-  }
 }
 
 .site-slogan {
   margin-top: .5rem;
   font-size: 110%;
-  @include respond-to(small-up) {
-    margin-top: 0;
-  }
 }
 
-// header {
-//   padding-bottom: 1rem;
-//   background: var(--color-light-gray);
-// }
 
 .site-name {
   font-size: 2.25rem;
   font-family: "Roboto Condensed",sans-serif;
   text-transform: uppercase;
   line-height: 1.2;
-  // font-family: var(--font-titles);
-  // margin-top: 4px;
   a {
     text-decoration: none;
     &:hover {

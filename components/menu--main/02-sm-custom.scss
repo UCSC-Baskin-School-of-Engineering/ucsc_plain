@@ -1,0 +1,23 @@
+#main-menu.sm-simple ul {
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 0;
+  width: 100%;
+  padding: 5px 0;
+  left: -900em;
+  position: absolute;
+  width: 12em;
+  li > a {
+    text-decoration-color: currentcolor;
+    padding: .25em .75em;
+    font-size: 17.28px;
+    color: var(--color-body);
+    border: none;
+    &:hover {
+      color: var(--color-blue);
+      text-decoration-color: currentcolor;      
+      text-decoration: underline;      
+    }
+  }
+}
