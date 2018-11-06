@@ -5,10 +5,11 @@
 
 ul.menu {
   margin: 0;
-  a.is-active {
-    color: var(--color-text-gray);
-    font-weight: 600;
-  }
+  // a.is-active {
+    // color: unset;
+  //   // color: var(--color-text-gray);
+  //   font-weight: 600;
+  // }
 }
 
 .menu--account,
@@ -65,6 +66,7 @@ ul#main-menu li {
   li {
     position: relative;
     margin-left: 1em;
+
     &:not(:first-child)::after {
       background-color: #f1af13;
       width: 5px;
@@ -78,9 +80,15 @@ ul#main-menu li {
       margin-left: -1.5px;
       margin-top: -2.5px;
     }
-    a, a.is-active {
+    @include respond-to(medium-down) {
+      display: block;
+      &:not(:first-child)::after {
+        display: none;
+      }
+    }
+    a {
       // font-weight: 400;
-      color: var(--color-white);
+      color: var(--color-white) !important;
       font-size: .9rem;
       display: block;
       // padding: .25rem;
