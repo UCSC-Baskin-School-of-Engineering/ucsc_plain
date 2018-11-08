@@ -4,6 +4,10 @@
   @include clearfix;
 }
 
+.paragraph--type--content-section {
+  clear: unset;
+}
+
 .paragraph--type--content-section,
 .paragraph--type--_-columns,
 .paragraph--type--_-column {

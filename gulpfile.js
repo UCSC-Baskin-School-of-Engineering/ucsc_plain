@@ -49,7 +49,7 @@ const options = {
 };
 
 exports.updateTestSite = (cb) => {
-  execSync('scp -r ./min soe:/www/wades.soe.ucsc.edu/htdocs/themes/ucsc_plain');
+  // execSync('scp -r ./min soe:/www/wades.soe.ucsc.edu/htdocs/themes/ucsc_plain');
   cb();
 };
 
