@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "gulp",
-    "dev": "cd __test__ && node get_test_page.js && cd .. && gulp watch",
+    "dev": "gulp watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

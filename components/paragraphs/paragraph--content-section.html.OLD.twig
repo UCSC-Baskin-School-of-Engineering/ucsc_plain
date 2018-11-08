@@ -51,8 +51,6 @@
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
       <div class="paragraph-sections">
-          {% content.field_width %}
-          
           {% set linkHere = content.field_sc_link.0['#url'] %}
 
           {% if linkHere is not empty %}
