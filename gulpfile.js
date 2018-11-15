@@ -48,11 +48,6 @@ const options = {
   },
 };
 
-exports.updateTestSite = (cb) => {
-  // execSync('scp -r ./min soe:/www/wades.soe.ucsc.edu/htdocs/themes/ucsc_plain');
-  cb();
-};
-
 // JS Tasks
 exports.js = () => (
   gulp.src(options.glob.js)
@@ -84,8 +79,8 @@ exports.sassLint = () => (
 );
 
 exports.watch = () => {
-  gulp.watch(options.glob.sass, gulp.series('sass', 'updateTestSite'));
-  gulp.watch(options.glob.js, gulp.series('js', 'updateTestSite'));
+  gulp.watch(options.glob.sass, gulp.series('sass'));
+  gulp.watch(options.glob.js, gulp.series('js'));
 };
 
 exports.default = (cb) => gulp.series('sass', 'js')(cb);

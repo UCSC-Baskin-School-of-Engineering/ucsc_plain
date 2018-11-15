@@ -37,6 +37,7 @@ ul#main-menu li {
 
   @include respond-to(medium-down) {
     display: block;
+    margin-right: 0;
   }
   a {
     margin: 0;

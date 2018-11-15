@@ -40,21 +40,18 @@
 #}
 {%
   set classes = [
-    'slick-wrapper-helper',
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,
+    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    'col-' ~ paragraph.field_width.value,
   ]
 %}
 
-<div{{ attributes.addClass(classes) }}>
-    <div class="slick-wrapper-helper-flex">
-    {% block paragraph %}
-        {% block content %}
-            <div class="hidden">{{ content }}</div>
-            <div class="image-wrapper" style="background-image: url('{{ file_url(content.field_sc_image['#items'].entity.uri.value) }}')">
-                {{ content.group_text_on_image }}
-            </div>
-            {{ content.group_add_text }}
-        {% endblock %}
-    {% endblock paragraph %}
-    </div>
-</div>
+{% block paragraph %}
 
+  <div{{ attributes.addClass(classes) }}>
+    {% block content %}
+      <div class="paragraph-sections">{{ content }}</div>
+    {% endblock %}
+  </div>
+{% endblock paragraph %}
