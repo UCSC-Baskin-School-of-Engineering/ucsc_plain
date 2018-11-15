@@ -1,5 +1,14 @@
-#top-bar {
+header {
   background: #01589d;
+}
+
+#header-container {
+  display: flex;
+  align-items: center;
+  @include respond-to(medium-down) {
+    display: block;
+    padding-top: 24px;
+  }
 }
 
 .block-system-branding-block {
@@ -54,14 +63,16 @@
   }
 }
 
-#block-ucsctitle {
+#ucsc-logo {
   margin: 0;
+  padding: 7px 0;
+  
   flex: 1;
-}
-#logo {
-  text-indent: -10000px;
-  background: transparent url(https://static.ucsc.edu/_responsive/images/logos/uc-santa-cruz-reverse.svg) no-repeat left top;
-  display: block;
-  width: 107px;
-  height: 26px;
+  a {
+    text-indent: -10000px;
+    background: transparent url(https://static.ucsc.edu/_responsive/images/logos/uc-santa-cruz-reverse.svg) no-repeat left top;
+    display: block;
+    width: 107px;
+    height: 26px;
+  }
 }

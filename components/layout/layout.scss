@@ -1,7 +1,7 @@
 
 // Add default max-width and padding to regions.
-.region-primary-menu > nav,
-.region-secondary-menu,
+#header-container,
+.region-primary-menu,
 .region-header,
 .region-help,
 .region-highlighted,
@@ -14,14 +14,18 @@ main {
   padding-right: 16px;
 }
 
+.region-primary-menu {
+  margin-bottom: 2em;
+}
+
 .region-secondary-menu {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
-  padding: 7px 16px;
+  padding: 7px 0;
   @include respond-to(medium-down) {
-    padding: 24px 16px;
+    padding: 0 0 24px 0;
     display: block;
     .menu--account li {
       margin: 0;

@@ -47,11 +47,13 @@
     {#{{ kint(page) }}#}
 
   <header role="banner">
-    <div id="top-bar">
+    <div id="header-container">
+      <div id="ucsc-logo"><a href="https://www.ucsc.edu">UC Santa Cruz</a></div>
       {{ page.secondary_menu }}
     </div>
-    {{ page.header }}
   </header>
+
+  {{ page.header }}
 
   {{ page.primary_menu }}
 
