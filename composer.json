@@ -1,0 +1,15 @@
+{
+  "name": "drupal/ucsc_plain",
+  "description": "UCSC plain theme.",
+  "type": "drupal-custom-theme",
+  "homepage": "https://github.com/UCSC-Baskin-School-of-Engineering/ucsc_plain",
+  "authors": [
+    {
+      "name": "Wyatt Ades",
+      "homepage": "https://wyattades.com",
+      "role": "Author"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev"
+}
